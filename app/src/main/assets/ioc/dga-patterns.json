@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "description": "DGA (域名生成算法) 检测模式",
+  "last_updated": "2026-07-14",
+
+  "entropy_threshold": 3.5,
+  "length_threshold": 12,
+  "digit_ratio_threshold": 0.3,
+  "vowel_ratio_range": [0.15, 0.45],
+
+  "regex_patterns": [
+    {
+      "name": "random_subdomain",
+      "pattern": "^[a-z0-9]{12,}\\.\\w+$",
+      "description": "长随机字母数字子域名"
+    },
+    {
+      "name": "hex_domain",
+      "pattern": "^[0-9a-f]{16,}\\.\\w+$",
+      "description": "十六进制字符串域名"
+    },
+    {
+      "name": "dictionary_dga",
+      "pattern": "^[a-z]{6,}(word|test|update|service|api|cdn|net|cloud)\\.\\w+$",
+      "description": "字典拼接 DGA 域名"
+    }
+  ],
+
+  "known_dga_families": [
+    {
+      "family": "Kimwolf",
+      "patterns": ["*.su", "*.cloud", "*.fun", "*.de"],
+      "note": "使用多 TLD 轮换"
+    },
+    {
+      "family": "Generic DGA",
+      "patterns": ["*.xyz", "*.top", "*.click", "*.country"],
+      "note": "常见廉价 TLD，结合熵值分析"
+    }
+  ],
+
+  "benign_high_entropy_domains": [
+    "googleusercontent.com",
+    "amazonaws.com",
+    "cloudfront.net",
+    "akamaihd.net",
+    "azureedge.net"
+  ],
+
+  "scoring_weights": {
+    "entropy": 0.3,
+    "length": 0.15,
+    "digit_ratio": 0.2,
+    "vowel_ratio": 0.15,
+    "regex_match": 0.2
+  }
+}
