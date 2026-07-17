@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "description": "Android 系统应用白名单 — A2 应用审计检测排除列表",
+  "last_updated": "2026-07-14",
+
+  "google_apps": [
+    "com.google.android.gms",
+    "com.google.android.gsf",
+    "com.google.android.googlequicksearchbox",
+    "com.google.android.apps.nbu.paisa.user",
+    "com.google.android.apps.photos",
+    "com.google.android.apps.maps",
+    "com.google.android.youtube",
+    "com.google.android.apps.docs",
+    "com.google.android.apps.docs.editor",
+    "com.google.android.inputmethod.latin",
+    "com.google.android.inputmethod.pinyin",
+    "com.google.android.dialer",
+    "com.google.android.contacts",
+    "com.google.android.deskclock",
+    "com.google.android.calendar",
+    "com.google.android.keep",
+    "com.google.android.gm",
+    "com.google.android.apps.translate",
+    "com.google.android.apps.wallet",
+    "com.google.android.youtube.music",
+    "com.android.vending",
+    "com.google.android.packageinstaller",
+    "com.google.android.webview",
+    "com.google.android.tag",
+    "com.google.android.feedback"
+  ],
+
+  "aosp_system_apps": [
+    "com.android.systemui",
+    "com.android.settings",
+    "com.android.phone",
+    "com.android.launcher3",
+    "com.android.providers.contacts",
+    "com.android.providers.media",
+    "com.android.providers.telephony",
+    "com.android.providers.calendar",
+    "com.android.providers.downloads",
+    "com.android.providers.userdictionary",
+    "com.android.inputmethod",
+    "com.android.defcontainer",
+    "com.android.shell",
+    "com.android.bluetooth",
+    "com.android.wifi",
+    "com.android.nfc",
+    "com.android.location.fused",
+    "com.android.calendar",
+    "com.android.camera2",
+    "com.android.email",
+    "com.android.exchange",
+    "com.android.mms",
+    "com.android.music",
+    "com.android.deskclock",
+    "com.android.documentsui",
+    "com.android.externalstorage",
+    "com.android.htmlviewer",
+    "com.android.wallpapercropper",
+    "com.android.printspooler",
+    "com.android.cellbroadcastreceiver"
+  ],
+
+  "vendor_apps": {
+    "xiaomi": [
+      "com.miui.securitycenter",
+      "com.miui.home",
+      "com.miui.player",
+      "com.miui.gallery",
+      "com.miui.camera",
+      "com.xiaomi.finddevice",
+      "com.miui.miwallpaper",
+      "com.miui.personalassistant",
+      "com.miui.screenrecorder",
+      "com.miui.cleanmaster"
+    ],
+    "samsung": [
+      "com.sec.android.app.launcher",
+      "com.sec.android.app.camera",
+      "com.sec.android.gallery3d",
+      "com.sec.android.app.music",
+      "com.samsung.android.security",
+      "com.samsung.android.knox.containercore",
+      "com.samsung.android.smartmirroring"
+    ],
+    "huawei": [
+      "com.huawei.systemmanager",
+      "com.huawei.android.launcher",
+      "com.huawei.camera",
+      "com.huawei.music",
+      "com.huawei.himovie",
+      "com.huawei.appmarket"
+    ],
+    "oppo": [
+      "com.coloros.safecenter",
+      "com.coloros.bootreg",
+      "com.oppo.market",
+      "com.coloros.gallery3d"
+    ],
+    "vivo": [
+      "com.iqoo.secure",
+      "com.vivo.appstore",
+      "com.android.bbkmusic"
+    ]
+  }
+}
