@@ -1,0 +1,97 @@
+# BotGuard v2 detekt 配置
+# https://detekt.dev/docs/introduction/configurations
+
+complexity:
+  active: true
+  LongMethod:
+    threshold: 100
+  LongParameterList:
+    functionThreshold: 8
+    constructorThreshold: 8
+  ComplexCondition:
+    threshold: 6
+  CyclomaticComplexMethod:
+    threshold: 25
+  TooManyFunctions:
+    thresholdInFiles: 25
+    thresholdInClasses: 20
+    thresholdInInterfaces: 15
+    thresholdInObjects: 20
+
+style:
+  active: true
+  WildcardImport:
+    active: false  # Compose 需要通配符导入
+  ReturnCount:
+    active: false  # 检测模块多个 return 正常
+  MagicNumber:
+    active: false  # 阈值和评分使用魔法数字
+  MaxLineLength:
+    maxLineLength: 140
+    excludePackageStatements: true
+    excludeImportStatements: true
+  UnusedPrivateMember:
+    active: true
+  UnusedImports:
+    active: true
+
+naming:
+  active: true
+  FunctionNaming:
+    functionPattern: '[a-z][a-zA-Z0-9]*'
+    excludeClassPattern: '$^'
+  VariableNaming:
+    variablePattern: '[a-z][a-zA-Z0-9]*'
+  TopLevelPropertyNaming:
+    active: true
+    constantPattern: '[A-Z][A-Za-z0-9]*'
+
+empty-blocks:
+  active: true
+  EmptyFunctionBlock:
+    active: true
+    IgnoreOverridden: true
+  EmptyCatchBlock:
+    active: true
+    IgnoreComment: true
+
+exceptions:
+  active: true
+  SwallowedException:
+    active: false  # 检测模块中有意吞异常（将错误记录在结果中）
+  TooGenericExceptionCaught:
+    active: false  # Exception 捕获在检测模块中是合理的
+
+performance:
+  active: true
+  ForEachOnRange:
+    active: true
+  SpreadOperator:
+    active: true
+
+potential-bugs:
+  active: true
+  UnsafeCallOnNullableType:
+    active: true
+  Deprecation:
+    active: true
+  MissingWhenCase:
+    active: true
+
+coroutines:
+  active: true
+  GlobalCoroutineUsage:
+    active: true
+  RedundantSuspendModifier:
+    active: true
+  SleepInsteadOfDelay:
+    active: true
+
+comments:
+  active: true
+  UndocumentedPublicClass:
+    active: false
+  UndocumentedPublicFunction:
+    active: false
+  CommentOverPrivateFunction:
+    active: false
