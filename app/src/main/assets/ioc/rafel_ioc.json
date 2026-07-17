@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "family": "Rafel RAT",
+  "version": "latest",
+  "first_seen": "2024",
+  "last_updated": "2026-04",
+  "infected_devices_estimate": "3M+",
+  "primary_targets": ["Android Phone", "Older Android (<12)"],
+  "capabilities": ["Remote Access", "SMS Reading", "Contact Theft", "File Exfiltration", "Device Admin Abuse"],
+  "note": "主要利用旧版 Android 的设备管理器漏洞实现防卸载",
+
+  "malicious_apk_packages": [
+    "com.rafel.service",
+    "com.system.security.update",
+    "com.phone.cleaner booster",
+    "com.battery.optimizer.pro"
+  ],
+
+  "c2_domains": [
+    "rafel-c2.ddns.net",
+    "mobile-security-update.com",
+    "device-manager-secure.xyz"
+  ],
+
+  "device_admin_abuse": {
+    "description": "通过设备管理器实现防卸载，用户无法正常卸载",
+    "detection": "检查设备管理器列表中是否存在非预期应用",
+    "target_policy": "USES_POLICY_FORCE_LOCK | USES_POLICY_WIPE_DATA"
+  },
+
+  "persistence_mechanisms": [
+    "device_admin",
+    "boot_completed_receiver",
+    "alarm_manager_periodic"
+  ],
+
+  "detection_rules": {
+    "device_admin_check": "检查设备管理器列表中是否存在伪装为系统更新/清理的应用",
+    "package_check": "检查已安装应用中是否包含 Rafel 相关包名",
+    "network_check": "检查是否有连接到 ddns.net 子域名的可疑网络活动",
+    "sms_check": "检查是否有应用请求 READ_SMS + RECEIVE_SMS + INTERNET 权限组合"
+  },
+
+  "references": [
+    "https://www.checkpoint.com/rafel-rat-android",
+    "Mandiant Mobile Threat Report 2025"
+  ]
+}
