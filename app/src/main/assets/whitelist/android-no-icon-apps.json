@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.1",
+  "description": "合理无图标应用白名单 — A2 隐藏图标检测排除列表",
+  "last_updated": "2026-07-15",
+  "note": "这些应用没有 launcher Activity 但属于正常行为，不应误报。v1.1 扩充了 SDK/组件/桌面小部件/语音助手/穿戴/系统服务等常见无图标应用。",
+
+  "no_icon_apps": [
+    {"package": "com.google.android.inputmethod.latin", "reason": "输入法"},
+    {"package": "com.google.android.inputmethod.pinyin", "reason": "拼音输入法"},
+    {"package": "com.sohu.inputmethod.sogou", "reason": "搜狗输入法"},
+    {"package": "com.baidu.input", "reason": "百度输入法"},
+    {"package": "com.iflytek.inputmethod", "reason": "讯飞输入法"},
+    {"package": "com.tencent.wetype", "reason": "微信输入法"},
+    {"package": "com.android.inputmethod.pinyin", "reason": "AOSP 拼音输入法"},
+
+    {"package": "com.google.android.accessibility.switchaccess", "reason": "无障碍服务"},
+    {"package": "com.google.android.marvin.talkback", "reason": "TalkBack 无障碍"},
+    {"package": "com.android.btbattery", "reason": "蓝牙电池组件"},
+
+    {"package": "com.google.android.gsf", "reason": "Google 服务框架"},
+    {"package": "com.google.android.gsf.login", "reason": "Google 登录服务"},
+    {"package": "com.google.android.backup", "reason": "Google 备份"},
+    {"package": "com.google.android.sync", "reason": "Google 同步"},
+    {"package": "com.google.android.setupwizard", "reason": "设置向导"},
+    {"package": "com.google.android.partnersetup", "reason": "合作伙伴设置"},
+    {"package": "com.google.android.onetimeinitializer", "reason": "一次性初始化"},
+    {"package": "com.google.android.configupdater", "reason": "配置更新"},
+    {"package": "com.google.android.gms", "reason": "Google Play 服务核心"},
+    {"package": "com.google.android.gms.location.history", "reason": "位置历史"},
+
+    {"package": "com.google.android.apps.wallpaper", "reason": "壁纸"},
+    {"package": "com.android.wallpaper.livepicker", "reason": "动态壁纸选择"},
+    {"package": "com.android.customlocale", "reason": "区域设置"},
+    {"package": "com.android.providers.partnerbookmarks", "reason": "合作伙伴书签"},
+    {"package": "com.android.keychain", "reason": "密钥链"},
+    {"package": "com.android.certinstaller", "reason": "证书安装"},
+    {"package": "com.android.pacprocessor", "reason": "PAC 代理"},
+    {"package": "com.android.proxyhandler", "reason": "代理处理"},
+    {"package": "com.android.managedprovisioning", "reason": "设备管理配置"},
+    {"package": "com.android.sharedstoragebackup", "reason": "共享存储备份"},
+
+    {"package": "com.android.providers.settings", "reason": "系统设置 Provider"},
+    {"package": "com.android.providers.contacts", "reason": "联系人 Provider"},
+    {"package": "com.android.providers.calendar", "reason": "日历 Provider"},
+    {"package": "com.android.providers.media", "reason": "媒体 Provider"},
+    {"package": "com.android.providers.telephony", "reason": "电话 Provider"},
+    {"package": "com.android.providers.downloads", "reason": "下载 Provider"},
+    {"package": "com.android.providers.userdictionary", "reason": "用户词典 Provider"},
+    {"package": "com.android.providers.blockednumber", "reason": "拦截号码 Provider"},
+
+    {"package": "com.google.android.printservice.recommendation", "reason": "打印服务推荐"},
+    {"package": "com.android.printspooler", "reason": "打印后台"},
+    {"package": "com.android.documentsui", "reason": "文件选择器"},
+    {"package": "com.android.externalstorage", "reason": "外部存储"},
+    {"package": "com.android.htmlviewer", "reason": "HTML 查看器"},
+    {"package": "com.android.wallpaperbackup", "reason": "壁纸备份"},
+    {"package": "com.android.cellbroadcastreceiver", "reason": "小区广播"},
+    {"package": "com.android.emergency", "reason": "紧急情况"},
+    {"package": "com.android.hotwordenrollment.okgoogle", "reason": "OK Google 热词"},
+
+    {"package": "com.google.android.wearable.app", "reason": "Wear OS"},
+    {"package": "com.google.android.gms.wearable", "reason": "穿戴服务"},
+
+    {"package": "com.google.android.tts", "reason": "Google TTS 语音引擎"},
+    {"package": "com.samsung.android.SMT", "reason": "Samsung TTS"},
+    {"package": "com.iflytek.speechcloud", "reason": "讯飞语音云"},
+
+    {"package": "com.android.bluetooth", "reason": "蓝牙服务"},
+    {"package": "com.android.nfc", "reason": "NFC 服务"},
+    {"package": "com.android.hotwordenrollment.xgoogle", "reason": "热词注册"},
+
+    {"package": "com.google.android.packageinstaller", "reason": "包安装器"},
+    {"package": "com.android.packageinstaller", "reason": "AOSP 包安装器"},
+
+    {"package": "com.qualcomm.qti.services.drm", "reason": "Qualcomm DRM 服务"},
+    {"package": "com.qualcomm.qti.devicestatisticsservice", "reason": "Qualcomm 统计服务"},
+    {"package": "com.qualcomm.location", "reason": "Qualcomm 定位"},
+    {"package": "com.qualcomm.timeservice", "reason": "Qualcomm 时间服务"},
+    {"package": "com.qti.extphone", "reason": "Qualcomm 扩展电话"},
+
+    {"package": "com.android.systemui.gesture", "reason": "手势导航"},
+    {"package": "com.android.systemui.theme.color", "reason": "主题颜色"},
+    {"package": "com.android.systemui.clocks", "reason": "时钟组件"},
+
+    {"package": "com.google.android.feedback", "reason": "反馈"},
+    {"package": "com.google.android.markup", "reason": "标记"},
+    {"package": "com.google.android.googlequicksearchbox", "reason": "Google 搜索"},
+
+    {"package": "com.miui.daemon", "reason": "MIUI 守护进程"},
+    {"package": "com.miui.guardprovider", "reason": "MIUI 安全守护"},
+    {"package": "com.xiaomi.finddevice", "reason": "小米查找设备"},
+    {"package": "com.xiaomi.joyose", "reason": "小米游戏服务"},
+    {"package": "com.xiaomi.misets", "reason": "小米设置"},
+
+    {"package": "com.huawei.systemmanager", "reason": "华为系统管理"},
+    {"package": "com.huawei.android.chr", "reason": "华为日志"},
+    {"package": "com.huawei.android.launcher", "reason": "华为桌面"},
+    {"package": "com.huawei.hms", "reason": "华为移动服务"},
+
+    {"package": "com.coloros.safecenter", "reason": "OPPO 安全中心"},
+    {"package": "com.coloros.gamespaceui", "reason": "OPPO 游戏空间"},
+    {"package": "com.oplus.battery", "reason": "OPPO 电池"},
+
+    {"package": "com.samsung.android.app.galaxyfinder", "reason": "三星查找"},
+    {"package": "com.samsung.android.knox.containercore", "reason": "三星 Knox"},
+    {"package": "com.samsung.android.mobileservice", "reason": "三星移动服务"},
+
+    {"package": "com.tencent.android.location", "reason": "腾讯定位"},
+    {"package": "com.tencent.mta", "reason": "腾讯 MTA 统计"},
+    {"package": "com.amap.api.location", "reason": "高德定位 SDK"}
+  ]
+}
