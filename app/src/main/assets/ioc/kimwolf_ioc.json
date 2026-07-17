@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "family": "Kimwolf",
+  "aliases": ["Guerrilla", "Socks5try"],
+  "version": "v7",
+  "first_seen": "2019",
+  "last_updated": "2026-07",
+  "infected_devices_estimate": "200M+",
+  "primary_targets": ["Android TV", "Android Phone", "IoT Device"],
+  "capabilities": ["DDoS", "SOCKS5 Proxy", "Tor Relay", "HTTP2 Flood", "Blockchain C2"],
+  "detection_keywords": ["区块链C2", "Tor代理", "HTTP2洪水", "DDoS代理", "ADB端口5555"],
+
+  "c2_domains": [
+    "14emeliaterracewestroxburyma02132.su",
+    "rtrdedge1.samsungcdn.cloud",
+    "staging.pproxy1.fun",
+    "api.groksearch.net",
+    "zachebt.chachasli.de"
+  ],
+
+  "blockchain_domains": [
+    "pawsatyou.eth"
+  ],
+
+  "processes": [
+    "netd_services",
+    "tv_helper",
+    "kw_service",
+    "kw_loader"
+  ],
+
+  "files": [
+    "libkw.so",
+    "/data/local/tmp/kwd",
+    "/tmp/.kw",
+    "/system/bin/netd_services",
+    "/data/local/tmp/.kw"
+  ],
+
+  "sockets": [
+    "@niggaboxv*"
+  ],
+
+  "downloader_ips": [
+    "93.95.112.50",
+    "93.95.112.51",
+    "93.95.112.52",
+    "93.95.112.53",
+    "93.95.112.54",
+    "93.95.112.55",
+    "93.95.112.59"
+  ],
+
+  "adb_port": 5555,
+  "tor_proxy": "127.0.0.1:23075",
+
+  "persistence_mechanisms": [
+    "device_admin",
+    "boot_completed_receiver",
+    "system_partition_install",
+    "adb_rebind"
+  ],
+
+  "network_indicators": {
+    "tor_proxy_port": 23075,
+    "socks5_port": 1080,
+    "http2_flood_user_agent": "Mozilla/5.0 (Linux; Android 10)",
+    "dns_over_https": true,
+    "blockchain_c2": true
+  },
+
+  "detection_rules": {
+    "process_check": "检查运行进程中是否包含 netd_services/tv_helper/kw_service/kw_loader",
+    "socket_check": "检查 abstract socket 中是否包含 @niggaboxv* 模式",
+    "file_check": "检查 /data/local/tmp/ 下是否存在 .kw 或 kwd 文件",
+    "adb_check": "检查 ADB 是否被非用户主动开启 (端口 5555 监听)",
+    "tor_check": "检查本地 23075 端口是否有 Tor 代理监听",
+    "blockchain_check": "检查 DNS 请求中是否包含 .eth/.crypto 等区块链域名"
+  },
+
+  "references": [
+    "https://www.humansecurity.com/tech-blog/satori-vs-kimwolf",
+    "https://blog.sucuri.net/2024/android-botnet",
+    "CNCERT 2025 年度 Android 威胁通报"
+  ]
+}
