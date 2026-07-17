@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "family": "Vo1d",
+  "version": "latest",
+  "first_seen": "2023",
+  "last_updated": "2026-06",
+  "infected_devices_estimate": "1.3M+",
+  "primary_targets": ["Android TV Box", "Streaming Device"],
+  "capabilities": ["Proxy", "Ad Fraud", "DDoS", "App Install"],
+
+  "malicious_apk_packages": [
+    "com.system.update.v2",
+    "com.android.services.v3",
+    "com.mediabox.service",
+    "com.tvbox.proxy"
+  ],
+
+  "system_partition_files": [
+    "/system/bin/vo1d",
+    "/system/xbin/vo1d",
+    "/system/app/Vo1dService/Vo1dService.apk",
+    "/system/priv-app/SystemUpdate/SystemUpdate.apk"
+  ],
+
+  "install_paths": [
+    "/data/data/com.system.update.v2",
+    "/data/data/com.android.services.v3",
+    "/system/vo1d/",
+    "/data/local/tmp/vo1d"
+  ],
+
+  "c2_domains": [
+    "vo1d-cdn.net",
+    "update-vo1d.com",
+    "stream-proxy.xyz"
+  ],
+
+  "c2_ips": [
+    "45.133.1.10",
+    "45.133.1.11",
+    "193.169.244.50"
+  ],
+
+  "persistence_mechanisms": [
+    "system_partition_install",
+    "boot_completed_receiver",
+    "package_replaced_receiver"
+  ],
+
+  "detection_rules": {
+    "package_check": "检查已安装应用中是否包含 com.system.update.v2 等恶意包名",
+    "file_check": "检查 /system/ 分区是否被修改，是否存在 vo1d 相关文件",
+    "boot_check": "检查开机自启应用中是否包含未知 streaming/proxy 相关应用",
+    "network_check": "检查是否有连接到 vo1d-cdn.net 等域名的网络活动"
+  },
+
+  "references": [
+    "https://blog.bitdefender.com/vo1d-android-tv-botnet",
+    "CNCERT Android TV 设备安全通报 2024"
+  ]
+}
