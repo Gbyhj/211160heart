@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "family": "Cerberus",
+  "version": "latest",
+  "first_seen": "2019",
+  "last_updated": "2026-02",
+  "infected_devices_estimate": "5M+",
+  "primary_targets": ["Android Phone"],
+  "capabilities": ["Banking Overlay", "2FA Interception", "SMS Theft", "Accessibility Abuse", "Remote Access"],
+  "note": "MaaS（恶意软件即服务）模式运营，源码曾泄露",
+
+  "malicious_apk_packages": [
+    "com.cerberus.bank",
+    "com.two.factor.auth",
+    "com.secure.otp.verify",
+    "com.phone.security.guard"
+  ],
+
+  "c2_domains": [
+    "cerberus-panel.com",
+    "otp-intercept.net",
+    "2fa-bypass.xyz"
+  ],
+
+  "accessibility_abuse_signatures": {
+    "2fa_interception": true,
+    "targeted_apps": [
+      "com.google.android.apps.authenticator2",
+      "com.microsoft.azureauthenticator",
+      "com.duosecurity.duomobile",
+      "com.bank.apps"
+    ],
+    "auto_fill_accessibility": true
+  },
+
+  "persistence_mechanisms": [
+    "accessibility_service",
+    "device_admin",
+    "boot_completed_receiver",
+    "foreground_service"
+  ],
+
+  "detection_rules": {
+    "accessibility_check": "检查无障碍服务是否被 OTP/验证器相关应用启用",
+    "2fa_check": "检查是否有非认证类应用请求无障碍 + 读取短信权限",
+    "package_check": "检查已安装应用中是否包含 Cerberus 相关包名",
+    "network_check": "检查是否有连接到 cerberus-panel.com 等域名的网络活动"
+  },
+
+  "references": [
+    "https://www.abuse.ch/cerberus-banking-trojan",
+    "ThreatFabric Mobile Threat Report 2025"
+  ]
+}
