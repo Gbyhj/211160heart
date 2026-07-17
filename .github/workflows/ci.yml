@@ -16,6 +16,8 @@ jobs:
           distribution: temurin
           java-version: '17'
       - uses: gradle/actions/setup-gradle@v3
+      - name: Make gradlew executable
+        run: chmod +x gradlew
       - name: Detekt
         run: ./gradlew detekt --console=plain --no-daemon
 
@@ -29,6 +31,8 @@ jobs:
           java-version: '17'
       - uses: gradle/actions/setup-gradle@v3
       - uses: android-actions/setup-android@v3
+      - name: Make gradlew executable
+        run: chmod +x gradlew
       - name: Unit Test
         run: ./gradlew testDebugUnitTest --console=plain --no-daemon
 
@@ -43,6 +47,8 @@ jobs:
           java-version: '17'
       - uses: gradle/actions/setup-gradle@v3
       - uses: android-actions/setup-android@v3
+      - name: Make gradlew executable
+        run: chmod +x gradlew
       - name: Build APK
         run: ./gradlew assembleDebug --console=plain --no-daemon
       - name: Upload APK
