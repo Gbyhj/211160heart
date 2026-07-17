@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "description": "合理高耗电/前台服务应用白名单",
+  "last_updated": "2026-07-14",
+
+  "high_battery_apps": [
+    {"package": "com.google.android.apps.maps", "reason": "导航"},
+    {"package": "com.autonavi.minimap", "reason": "高德导航"},
+    {"package": "com.tencent.map", "reason": "腾讯导航"},
+    {"package": "com.baidu.BaiduMap", "reason": "百度导航"},
+    {"package": "com.netease.cloudmusic", "reason": "音乐播放"},
+    {"package": "com.tencent.qqmusic", "reason": "QQ音乐"},
+    {"package": "com.kugou.android", "reason": "酷狗音乐"},
+    {"package": "com.google.android.apps.youtube.music", "reason": "YouTube Music"},
+    {"package": "com.google.android.youtube", "reason": "视频播放"},
+    {"package": "com.tencent.qqlive", "reason": "腾讯视频"},
+    {"package": "com.baidu.netdisk", "reason": "百度网盘下载"},
+    {"package": "com.taobao.taobao", "reason": "购物浏览"},
+    {"package": "com.jingdong.app.mall", "reason": "购物浏览"},
+    {"package": "com.xingin.xhs", "reason": "社交浏览"},
+    {"package": "com.sankuai.meituan", "reason": "外卖定位"},
+    {"package": "com.google.android.apps.fitness", "reason": "运动追踪"},
+    {"package": "com.keep.android", "reason": "运动追踪"},
+    {"package": "com.tencent.wework", "reason": "企业微信"},
+    {"package": "com.tencent.mm", "reason": "微信"},
+    {"package": "com.eg.android.AlipayGphone", "reason": "支付宝"}
+  ],
+
+  "foreground_service_apps": [
+    {"package": "com.netease.cloudmusic", "reason": "音乐播放前台服务"},
+    {"package": "com.tencent.qqmusic", "reason": "音乐播放前台服务"},
+    {"package": "com.google.android.apps.maps", "reason": "导航前台服务"},
+    {"package": "com.autonavi.minimap", "reason": "导航前台服务"},
+    {"package": "com.tencent.wework", "reason": "消息推送前台服务"},
+    {"package": "com.tencent.mm", "reason": "消息推送前台服务"},
+    {"package": "com.baidu.netdisk", "reason": "文件下载前台服务"},
+    {"package": "com.taobao.taobao", "reason": "推送前台服务"},
+    {"package": "com.jingdong.app.mall", "reason": "推送前台服务"},
+    {"package": "com.xingin.xhs", "reason": "推送前台服务"},
+    {"package": "com.ss.android.ugc.aweme", "reason": "推送前台服务"},
+    {"package": "com.ss.android.article.news", "reason": "推送前台服务"}
+  ],
+
+  "multi_process_apps": [
+    {"package": "com.tencent.mm", "reason": "微信多进程推送"},
+    {"package": "com.tencent.mobileqq", "reason": "QQ多进程"},
+    {"package": "com.android.chrome", "reason": "Chrome多进程沙箱"},
+    {"package": "org.mozilla.firefox", "reason": "Firefox多进程"},
+    {"package": "com.miui.home", "reason": "MIUI桌面多进程"},
+    {"package": "com.android.vending", "reason": "Play Store多进程"},
+    {"package": "com.taobao.taobao", "reason": "淘宝多进程"},
+    {"package": "com.ss.android.ugc.aweme", "reason": "抖音多进程"},
+    {"package": "com.kuaishou.smile", "reason": "快手多进程"},
+    {"package": "com.baidu.searchbox", "reason": "百度多进程"}
+  ]
+}
