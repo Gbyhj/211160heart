@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "family": "BTMOB",
+  "version": "latest",
+  "first_seen": "2024",
+  "last_updated": "2026-05",
+  "primary_targets": ["Android Phone"],
+  "capabilities": ["SMS Interception", "Banking Fraud", "Overlay Attack", "Accessibility Abuse"],
+
+  "malicious_apk_packages": [
+    "com.btmob.service",
+    "com.bank.update.security",
+    "com.phone.optimized.clean"
+  ],
+
+  "c2_domains": [
+    "btmob-c2.com",
+    "secure-bank-update.net",
+    "mob-proxy.xyz"
+  ],
+
+  "accessibility_abuse_signatures": {
+    "targeted_apps": [
+      "com.bank.apps",
+      "com.google.android.apps.nbu.paisa.user",
+      "com.paytm",
+      "com.phonepe.app"
+    ],
+    "overlay_targets": [
+      "com.android.settings",
+      "com.google.android.gms"
+    ]
+  },
+
+  "persistence_mechanisms": [
+    "accessibility_service",
+    "device_admin",
+    "boot_completed_receiver",
+    "foreground_service"
+  ],
+
+  "detection_rules": {
+    "accessibility_check": "检查无障碍服务是否被非银行/支付类应用启用",
+    "overlay_check": "检查是否有应用请求 SYSTEM_ALERT_WINDOW 并安装了银行相关应用",
+    "package_check": "检查已安装应用中是否包含 BTMOB 相关包名",
+    "network_check": "检查是否有连接到 btmob-c2.com 等域名的网络活动"
+  },
+
+  "references": [
+    "https://www.cleafy.com/btmob-android-banking-trojan",
+    "Group-IB Mobile Threat Report 2024"
+  ]
+}
