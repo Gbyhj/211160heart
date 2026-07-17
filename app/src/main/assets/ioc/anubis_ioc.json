@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "family": "Anubis",
+  "version": "latest",
+  "first_seen": "2019",
+  "last_updated": "2026-03",
+  "infected_devices_estimate": "10M+",
+  "primary_targets": ["Android Phone"],
+  "capabilities": ["Banking Overlay", "SMS Interception", "Keylogging", "Screen Capture", "Ransomware"],
+  "note": "活跃度最高的 Android 银行木马家族之一",
+
+  "malicious_apk_packages": [
+    "com.anubis.bank",
+    "com.secure.wallet.update",
+    "com.financial.app.security",
+    "com.mobile.banking.protection"
+  ],
+
+  "c2_domains": [
+    "anubis-c2.com",
+    "bank-secure-update.net",
+    "wallet-protection.xyz"
+  ],
+
+  "c2_ips": [
+    "185.142.236.10",
+    "185.142.236.11"
+  ],
+
+  "overlay_targets": [
+    "com.bank.apps",
+    "com.paypal.android.p2pmobile",
+    "com.wf.wellsfargo",
+    "com.chase.sig.android",
+    "com.boa",
+    "com.capitalone.mobile"
+  ],
+
+  "persistence_mechanisms": [
+    "accessibility_service",
+    "device_admin",
+    "boot_completed_receiver",
+    "foreground_service",
+    "alarm_manager_periodic"
+  ],
+
+  "detection_rules": {
+    "accessibility_check": "检查无障碍服务是否被伪装为银行安全类应用启用",
+    "overlay_check": "检查 SYSTEM_ALERT_WINDOW 权限 + 安装了银行应用",
+    "package_check": "检查已安装应用中是否包含 Anubis 相关包名",
+    "keyboard_check": "检查是否有非系统应用请求无障碍服务并安装在银行应用之后",
+    "network_check": "检查是否有连接到 anubis-c2.com 等域名的网络活动"
+  },
+
+  "references": [
+    "https://www.kaspersky.com/anubis-banking-trojan",
+    "Cleafy Mobile Threat Report 2025"
+  ]
+}
