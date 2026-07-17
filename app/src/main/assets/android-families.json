@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0",
+  "description": "Android 恶意软件家族特征库",
+  "last_updated": "2026-07-14",
+
+  "families": [
+    {
+      "name": "Kimwolf",
+      "type": "Botnet/DDoS/Proxy",
+      "severity": 5,
+      "c2_protocol": "HTTP2 + Tor + Blockchain DNS",
+      "persistence": ["device_admin", "system_partition", "adb_rebind"],
+      "unique_indicators": ["@niggaboxv* socket", "Tor proxy :23075", ".eth C2 domain"],
+      "ioc_file": "ioc-database/kimwolf_ioc.json"
+    },
+    {
+      "name": "Vo1d",
+      "type": "Botnet/Proxy/Ad Fraud",
+      "severity": 4,
+      "c2_protocol": "HTTP",
+      "persistence": ["system_partition", "boot_receiver"],
+      "unique_indicators": ["/system/bin/vo1d", "Android TV Box target"],
+      "ioc_file": "ioc-database/vo1d_ioc.json"
+    },
+    {
+      "name": "BTMOB",
+      "type": "Banking Trojan",
+      "severity": 5,
+      "c2_protocol": "HTTP",
+      "persistence": ["accessibility", "device_admin", "foreground_service"],
+      "unique_indicators": ["accessibility + banking apps", "overlay attack"],
+      "ioc_file": "ioc-database/btmob_ioc.json"
+    },
+    {
+      "name": "Rafel RAT",
+      "type": "RAT",
+      "severity": 4,
+      "c2_protocol": "HTTP + DDNS",
+      "persistence": ["device_admin", "boot_receiver", "alarm_manager"],
+      "unique_indicators": ["device admin anti-uninstall", "targets old Android <12"],
+      "ioc_file": "ioc-database/rafel_ioc.json"
+    },
+    {
+      "name": "Anubis",
+      "type": "Banking Trojan",
+      "severity": 5,
+      "c2_protocol": "HTTP",
+      "persistence": ["accessibility", "device_admin", "foreground_service"],
+      "unique_indicators": ["banking overlay", "keylogging", "screen capture"],
+      "ioc_file": "ioc-database/anubis_ioc.json"
+    },
+    {
+      "name": "Cerberus",
+      "type": "Banking Trojan/MaaS",
+      "severity": 5,
+      "c2_protocol": "HTTP",
+      "persistence": ["accessibility", "device_admin", "foreground_service"],
+      "unique_indicators": ["2FA interception", "OTP auto-fill abuse", "source leaked"],
+      "ioc_file": "ioc-database/cerberus_ioc.json"
+    },
+    {
+      "name": "Mirai (Android variant)",
+      "type": "Botnet/DDoS",
+      "severity": 4,
+      "c2_protocol": "Custom TCP",
+      "persistence": ["boot_receiver"],
+      "unique_indicators": ["Telnet brute force", "IoT propagation"],
+      "ioc_file": null
+    },
+    {
+      "name": "Joker",
+      "type": "Billing Fraud",
+      "severity": 3,
+      "c2_protocol": "HTTP",
+      "persistence": ["boot_receiver", "alarm_manager"],
+      "unique_indicators": ["premium SMS subscription", "WAP billing"],
+      "ioc_file": null
+    },
+    {
+      "name": "Triada",
+      "type": "Adware/Banking",
+      "severity": 4,
+      "c2_protocol": "HTTP",
+      "persistence": ["system_process_injection", "boot_receiver"],
+      "unique_indicators": ["injects into system_server", "modifies DNS"],
+      "ioc_file": null
+    },
+    {
+      "name": "FluBot",
+      "type": "Banking Trojan",
+      "severity": 4,
+      "c2_protocol": "HTTP",
+      "persistence": ["accessibility", "boot_receiver"],
+      "unique_indicators": ["SMS phishing delivery", "call forwarding"],
+      "ioc_file": null
+    }
+  ]
+}
