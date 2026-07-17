@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "description": "通用 C2 IP 黑名单，整合 AbuseIPDB + Spamhaus 公开数据",
+  "last_updated": "2026-07-14",
+  "update_frequency": "weekly",
+  "sources": ["AbuseIPDB", "Spamhaus DROP", "EmergingThreats"],
+
+  "c2_ips": [
+    {"ip": "45.133.1.0/24", "tag": "Vo1d C2", "family": "Vo1d"},
+    {"ip": "93.95.112.0/24", "tag": "Kimwolf Downloader", "family": "Kimwolf"},
+    {"ip": "185.142.236.0/24", "tag": "Anubis C2", "family": "Anubis"},
+    {"ip": "193.169.244.0/24", "tag": "Vo1d C2 Secondary", "family": "Vo1d"},
+    {"ip": "45.155.205.0/24", "tag": "Malspam C2", "family": "Generic"},
+    {"ip": "91.215.85.0/24", "tag": "DDoS Botnet C2", "family": "Generic"},
+    {"ip": "194.169.175.0/24", "tag": "Banking Trojan C2", "family": "Generic"},
+    {"ip": "176.10.99.0/24", "tag": "PROXY Botnet C2", "family": "Generic"},
+    {"ip": "23.106.122.0/24", "tag": "Tor Exit Node Botnet", "family": "Generic"},
+    {"ip": "51.158.144.0/24", "tag": "Mirai Variant C2", "family": "Mirai"}
+  ],
+
+  "suspicious_ports": [5555, 23075, 1080, 31337, 6667, 6668, 6669, 8080, 8443, 4444, 1337, 9001, 9050],
+
+  "tor_exit_nodes_note": "建议定期从 https://check.torproject.org/exit-address 获取最新 Tor 出口节点列表",
+
+  "ddns_domains": [
+    "*.ddns.net",
+    "*.ddnsking.com",
+    "*.no-ip.com",
+    "*.duckdns.org",
+    "*.freedns.afraid.org"
+  ]
+}
