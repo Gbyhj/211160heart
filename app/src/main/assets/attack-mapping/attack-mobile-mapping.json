@@ -1,0 +1,171 @@
+{
+  "schema_version": "1.0",
+  "description": "MITRE ATT&CK Mobile 映射表 — BotGuard 检测项与 ATT&CK 技术对照",
+  "last_updated": "2026-07-14",
+  "source": "MITRE ATT&CK Mobile Matrix (https://attack.mitre.org/matrices/mobile/)",
+
+  "mappings": [
+    {
+      "attack_id": "T1437.001",
+      "technique": "Device Administrator (设备管理器)",
+      "tactic": "Persistence",
+      "detection_module": "A3",
+      "detection_item": "B-A3-01",
+      "severity": 5,
+      "description": "恶意应用通过设备管理器实现持久化和防卸载"
+    },
+    {
+      "attack_id": "T1437.002",
+      "technique": "Accessibility Service (无障碍服务)",
+      "tactic": "Persistence",
+      "detection_module": "A3",
+      "detection_item": "B-A3-02",
+      "severity": 5,
+      "description": "恶意应用滥用无障碍服务实现界面劫持和持久化"
+    },
+    {
+      "attack_id": "T1400.001",
+      "technique": "Boot Completed Receiver (开机自启广播)",
+      "tactic": "Persistence",
+      "detection_module": "A3",
+      "detection_item": "B-A3-03",
+      "severity": 3,
+      "description": "注册 BOOT_COMPLETED 广播接收器实现开机自启"
+    },
+    {
+      "attack_id": "T1633.001",
+      "technique": "Foreground Service Persistence (前台服务保活)",
+      "tactic": "Persistence",
+      "detection_module": "A3",
+      "detection_item": "B-A3-04",
+      "severity": 3,
+      "description": "利用前台服务保持应用持续运行"
+    },
+    {
+      "attack_id": "T1633.002",
+      "technique": "JobScheduler Abuse (JobScheduler 滥用)",
+      "tactic": "Persistence",
+      "detection_module": "A3",
+      "detection_item": "B-A3-05",
+      "severity": 3,
+      "description": "通过 JobScheduler 实现定时持久化任务"
+    },
+    {
+      "attack_id": "T1404",
+      "technique": "Battery Optimization Exemption (电池优化白名单)",
+      "tactic": "Persistence",
+      "detection_module": "A3",
+      "detection_item": "B-A3-07",
+      "severity": 3,
+      "description": "申请电池优化白名单以避免系统杀进程"
+    },
+    {
+      "attack_id": "T1625.001",
+      "technique": "Overlay Window (覆盖窗口)",
+      "tactic": "Defense Evasion",
+      "detection_module": "A3",
+      "detection_item": "B-A3-11",
+      "severity": 3,
+      "description": "利用 SYSTEM_ALERT_WINDOW 进行界面覆盖攻击"
+    },
+    {
+      "attack_id": "T1417.001",
+      "technique": "Notification Listener (通知监听)",
+      "tactic": "Collection",
+      "detection_module": "A3",
+      "detection_item": "B-A3-12",
+      "severity": 3,
+      "description": "通过通知监听服务窃取通知内容（验证码等）"
+    },
+    {
+      "attack_id": "T1407.001",
+      "technique": "Dangerous Permission Combination (高危权限组合)",
+      "tactic": "Privilege Escalation",
+      "detection_module": "A2",
+      "detection_item": "B-A2-01",
+      "severity": 5,
+      "description": "申请高危权限组合（如无障碍+网络）实现攻击能力"
+    },
+    {
+      "attack_id": "T1407.002",
+      "technique": "Hidden App Icon (隐藏应用图标)",
+      "tactic": "Defense Evasion",
+      "detection_module": "A2",
+      "detection_item": "B-A2-02",
+      "severity": 4,
+      "description": "隐藏应用图标避免用户发现"
+    },
+    {
+      "attack_id": "T1027.005",
+      "technique": "Masquerade System App (伪装系统应用)",
+      "tactic": "Defense Evasion",
+      "detection_module": "A2",
+      "detection_item": "B-A2-03",
+      "severity": 5,
+      "description": "伪装包名或名称为系统应用以逃避检测"
+    },
+    {
+      "attack_id": "T1027.006",
+      "technique": "Dynamic Code Loading (动态代码加载)",
+      "tactic": "Defense Evasion",
+      "detection_module": "A2",
+      "detection_item": "B-A2-05",
+      "severity": 4,
+      "description": "使用 DexClassLoader 动态加载恶意代码"
+    },
+    {
+      "attack_id": "T1624.001",
+      "technique": "Root Detection (Root 状态检测)",
+      "tactic": "Discovery",
+      "detection_module": "A6",
+      "detection_item": "B-A6-01",
+      "severity": 2,
+      "description": "检测设备 Root 状态，Root 设备更易被利用"
+    },
+    {
+      "attack_id": "T1624.002",
+      "technique": "Emulator Detection (模拟器检测)",
+      "tactic": "Discovery",
+      "detection_module": "A6",
+      "detection_item": "B-A6-03",
+      "severity": 2,
+      "description": "检测运行环境是否为模拟器"
+    },
+    {
+      "attack_id": "T1624.003",
+      "technique": "Debugger Detection (调试器检测)",
+      "tactic": "Discovery",
+      "detection_module": "A6",
+      "detection_item": "B-A6-04",
+      "severity": 3,
+      "description": "检测是否有调试器附加"
+    },
+    {
+      "attack_id": "T1624.004",
+      "technique": "Hooking Framework Detection (Xposed/Frida)",
+      "tactic": "Discovery",
+      "detection_module": "A6",
+      "detection_item": "B-A6-05",
+      "severity": 3,
+      "description": "检测 Xposed/LSPosed/Frida 等 Hook 框架"
+    },
+    {
+      "attack_id": "T1630.001",
+      "technique": "Data Over Cellular (异常蜂窝数据传输)",
+      "tactic": "Exfiltration",
+      "detection_module": "A5",
+      "detection_item": "B-A5-05",
+      "severity": 3,
+      "description": "后台异常流量可能表明数据外泄"
+    },
+    {
+      "attack_id": "T1630.002",
+      "technique": "Cryptomining (加密挖矿)",
+      "tactic": "Impact",
+      "detection_module": "A5",
+      "detection_item": "B-A5-06",
+      "severity": 4,
+      "description": "后台异常 CPU 占用可能是加密挖矿行为"
+    }
+  ]
+}
